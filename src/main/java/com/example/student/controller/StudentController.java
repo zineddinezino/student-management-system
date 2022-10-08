@@ -26,7 +26,7 @@ public class StudentController {
     @Autowired
     private StudentService studentService;
 
-    @PostMapping
+    @PostMapping("students")
     public ResponseEntity<StudentDto> createStudent(@RequestBody Student student){
         return ResponseEntity.status(HttpStatus.OK).body(studentService.createStudent(student));
     }
