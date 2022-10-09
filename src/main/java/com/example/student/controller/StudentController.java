@@ -42,7 +42,7 @@ public class StudentController {
     }
 
     @PutMapping("students")
-    public void updateStudent(@RequestBody Student student){
+    public void updateStudent(@RequestBody StudentDto student){
         studentService.updateStudentInfo(student);
     }
 

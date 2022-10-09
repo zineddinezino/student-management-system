@@ -37,12 +37,14 @@ public class StudentService {
         return studentMapper.toDTO(student);
     }
 
-    public StudentDto updateStudentInfo(Student studentToUpdate){
+    public StudentDto updateStudentInfo(StudentDto studentToUpdate){
         // This method should be split into several methods based on the model
         Student student = studentRepository.findById(studentToUpdate.getStudentId()).orElseThrow(() -> new StudentMSException("Student not found"));
         student.setFirstName(studentToUpdate.getFirstName());
         student.setLastName(studentToUpdate.getLastName());
+        student.setDateOfBirth(studentToUpdate.getDateOfBirth());
         studentRepository.save(student);
+        // The return type is just for testing purposes
         return studentMapper.toDTO(student);
     }
     public void deleteStudent(Long studentId){
