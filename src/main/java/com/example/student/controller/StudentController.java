@@ -42,8 +42,8 @@ public class StudentController {
     }
 
     @PutMapping("students")
-    public void updateStudent(@RequestBody StudentDto student){
-        studentService.updateStudentInfo(student);
+    public ResponseEntity<StudentDto> updateStudent(@RequestBody StudentDto student){
+        return ResponseEntity.status(HttpStatus.OK).body(studentService.updateStudentInfo(student));
     }
 
     @DeleteMapping("students/{studentId}")

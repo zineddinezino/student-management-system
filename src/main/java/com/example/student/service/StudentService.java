@@ -44,7 +44,6 @@ public class StudentService {
         student.setLastName(studentToUpdate.getLastName());
         student.setDateOfBirth(studentToUpdate.getDateOfBirth());
         studentRepository.save(student);
-        // The return type is just for testing purposes
         return studentMapper.toDTO(student);
     }
     public void deleteStudent(Long studentId){
