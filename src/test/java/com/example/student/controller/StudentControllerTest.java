@@ -34,7 +34,7 @@ class StudentControllerTest {
         Mockito.when(studentService.getStudentById(1L)).thenReturn(studentDto);
 
         mockMvc.perform(MockMvcRequestBuilders
-                .get("/api/students/1L")
+                .get("/api/students/1")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.firstName", Matchers.is("Zineddine")));
